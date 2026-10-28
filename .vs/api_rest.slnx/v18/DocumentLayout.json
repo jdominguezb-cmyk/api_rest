@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PC\\Downloads\\api_rest\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{152B0493-FE2F-82A2-8B8F-014C67736C33}|api_rest\\api_rest.csproj|c:\\users\\pc\\downloads\\api_rest\\api_rest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{152B0493-FE2F-82A2-8B8F-014C67736C33}|api_rest\\api_rest.csproj|solutionrelative:api_rest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{152B0493-FE2F-82A2-8B8F-014C67736C33}|api_rest\\api_rest.csproj|c:\\users\\pc\\downloads\\api_rest\\api_rest\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{152B0493-FE2F-82A2-8B8F-014C67736C33}|api_rest\\api_rest.csproj|solutionrelative:api_rest\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{152B0493-FE2F-82A2-8B8F-014C67736C33}|api_rest\\api_rest.csproj|c:\\users\\pc\\downloads\\api_rest\\api_rest\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{152B0493-FE2F-82A2-8B8F-014C67736C33}|api_rest\\api_rest.csproj|solutionrelative:api_rest\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{152B0493-FE2F-82A2-8B8F-014C67736C33}|api_rest\\api_rest.csproj|c:\\users\\pc\\downloads\\api_rest\\api_rest\\models\\sistemaventascontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{152B0493-FE2F-82A2-8B8F-014C67736C33}|api_rest\\api_rest.csproj|solutionrelative:api_rest\\models\\sistemaventascontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\api_rest\\api_rest\\appsettings.json",
+              "RelativeDocumentMoniker": "api_rest\\appsettings.json",
+              "ToolTip": "C:\\Users\\PC\\Downloads\\api_rest\\api_rest\\appsettings.json",
+              "RelativeToolTip": "api_rest\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-08T03:58:00.335Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClientesController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\api_rest\\api_rest\\Controllers\\ClientesController.cs",
+              "RelativeDocumentMoniker": "api_rest\\Controllers\\ClientesController.cs",
+              "ToolTip": "C:\\Users\\PC\\Downloads\\api_rest\\api_rest\\Controllers\\ClientesController.cs",
+              "RelativeToolTip": "api_rest\\Controllers\\ClientesController.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAmwAEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T01:22:50.032Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SistemaVentasContext.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\api_rest\\api_rest\\Models\\SistemaVentasContext.cs",
+              "RelativeDocumentMoniker": "api_rest\\Models\\SistemaVentasContext.cs",
+              "ToolTip": "C:\\Users\\PC\\Downloads\\api_rest\\api_rest\\Models\\SistemaVentasContext.cs",
+              "RelativeToolTip": "api_rest\\Models\\SistemaVentasContext.cs",
+              "ViewState": "AgIAANIAAAAAAAAAAAAkwA4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T00:18:10.398Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\api_rest\\api_rest\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "api_rest\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\PC\\Downloads\\api_rest\\api_rest\\Models\\Cliente.cs",
+              "RelativeToolTip": "api_rest\\Models\\Cliente.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T03:37:45.71Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

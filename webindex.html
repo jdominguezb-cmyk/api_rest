@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Clientes - Vue.js & Bootstrap</title>
+  <!-- CSS de Bootstrap 5 por CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Vue.js 3 por CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body class="bg-light">
+
+  <div id="app" class="container my-5">
+    
+    <div class="row mb-4">
+      <div class="col">
+        <h1 class="text-primary fw-bold">Gestión de Clientes</h1>
+        <p class="text-muted">Conectado a la Web API (.NET Core & MySQL)</p>
+      </div>
+    </div>
+
+    <!-- Tarjeta del Formulario (Crear / Editar) -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">{{ cliente.idCliente ? '✏️ Editar Cliente' : '➕ Nuevo Cliente' }}</h5>
+      </div>
+      <div class="card-body">
+        <form @submit.prevent="guardar">
+          <div class="row g-3">
+            <div class="col-md-3">
+              <label class="form-label">NIT</label>
+              <input type="text" class="form-control" v-model="cliente.nit" placeholder="Ej. 123456-7" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" v-model="cliente.nombre" placeholder="Nombre" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Apellidos</label>
+              <input type="text" class="form-control" v-model="cliente.apellidos" placeholder="Apellidos" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" v-model="cliente.email" placeholder="correo@ejemplo.com" required>
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <button type="submit" class="btn btn-success me-2">
+              {{ cliente.idCliente ? 'Actualizar' : 'Guardar' }}
+            </button>
+            <button type="button" class="btn btn-secondary" v-if="cliente.idCliente" @click="limpiar">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Tarjeta de la Tabla de Clientes (SELECT) -->
+    <div class="card shadow-sm">
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Lista de Clientes</h5>
+        <button class="btn btn-sm btn-light" @click="cargarClientes">🔄 Recargar</button>
+      </div>
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-hover table-striped mb-0 align-middle">
+            <thead class="table-dark">
+              <tr>
+                <th class="text-center">ID</th>
+                <th>NIT</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="c in clientes" :key="c.idCliente">
+                <td class="text-center fw-bold">{{ c.idCliente }}</td>
+                <td>{{ c.nit }}</td>
+                <td>{{ c.nombre }}</td>
+                <td>{{ c.apellidos }}</td>
+                <td>{{ c.email }}</td>
+                <td class="text-center">
+                  <button class="btn btn-warning btn-sm" @click="editar(c)">✏️ Editar</button>
+                </td>
+              </tr>
+              <tr v-if="clientes.length === 0">
+                <td colspan="6" class="text-center text-muted py-4">No hay clientes para mostrar o la API no está respondiendo.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          urlApi: 'https://localhost:7085/Clientes',
+          clientes: [],
+          cliente: { idCliente: 0, nit: '', nombre: '', apellidos: '', email: '' }
+        }
+      },
+      methods: {
+        async cargarClientes() {
+          try {
+            const res = await fetch(`${this.urlApi}/ListarUsuarios`);
+            if (res.ok) {
+              this.clientes = await res.json();
+            }
+          } catch (err) {
+            console.error("Error al cargar clientes:", err);
+          }
+        },
+
+        async guardar() {
+          try {
+            if (this.cliente.idCliente) {
+              await fetch(`${this.urlApi}/ActualizarUsuario/${this.cliente.idCliente}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(this.cliente)
+              });
+            } else {
+              await fetch(`${this.urlApi}/CrearUsuario`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(this.cliente)
+              });
+            }
+            this.limpiar();
+            this.cargarClientes();
+          } catch (err) {
+            console.error("Error al guardar cliente:", err);
+          }
+        },
+
+        editar(c) {
+          this.cliente = { ...c };
+        },
+
+        limpiar() {
+          this.cliente = { idCliente: 0, nit: '', nombre: '', apellidos: '', email: '' };
+        }
+      },
+      mounted() {
+        this.cargarClientes();
+      }
+    }).mount('#app');
+  </script>
+
+</body>
+</html>
